@@ -10,9 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     btnAcc.addEventListener('click', function () {
         roverPosition.innerHTML = Number(roverPosition.innerHTML) + Number(roverSpeed.innerHTML);
         roverSpeed.innerHTML *= 2;
-        // var x = rover.offsetLeft;
         if(roverPosition.innerHTML < 7 && roverPosition.innerHTML > -7){
-            // rover.classList.add("marsrover_transition");
             surface.forEach(function(item, i, surface) {
                 surface[i].innerHTML = i-7;
 
@@ -21,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         }
         if(roverPosition.innerHTML >= 7 || roverPosition.innerHTML <= -7){
-            // rover.classList.remove("marsrover_transition");
             surface.forEach(function(item, i, surface) {
                         surface[i].innerHTML = i-7 + Number(roverPosition.innerHTML);
 
@@ -29,16 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
             roverBody.style.left = 20+"px";
 
         }
-        // rover.style.left = x+"px";
-        // var mirror = new mirrorClass();
-        // if(rover.offsetLeft > 700){
-        //     surface.forEach(function(item, i, surface) {
-        //         surface[i].innerHTML = Number(surface[i].innerHTML) + Number(roverPosition.innerHTML)-1;
-        //     });
-        //
-        //     rover.style.left = 110+"px";
-        // }
-
     });
 
     btnRev.addEventListener('click', function () {
