@@ -1,0 +1,22 @@
+@import "../../node_modules/reset-css/sass/reset";
+@import "support-styles";
+@import "variables";
+@import "body-styles";
+@import "surface-styles";
+@import "marsrover-styles";
+@import "console-styles";
+@import "meters-styles";
+
+@font-face {
+  font-family: 'Capture it';
+  src: url('../fonts/capture-it.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans Extrabold';
+  src: url('../fonts/open-sans-extrabold.ttf');
+  font-weight: 400;
+  font-style: normal;
+}

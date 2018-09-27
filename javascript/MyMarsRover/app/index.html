@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Marsrover</title>
+    <link href="css/styles.min.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+</head>
+<body class="body body_background flex-center-center">
+    <div class="box-general flex-center-around">
+        <div class="flex-between-center">
+            <div class="meters-wrapper flex-center-around">
+                <p class="flex-between-center">
+                    <span class="meters__text">текущая позиции марсохода:</span>
+                    <span id="position" class="meters__text meters__text-number">0</span>
+                </p>
+                <p class="flex-between-center">
+                    <span class="meters__text">текущая скорость марсохода:</span>
+                    <span id="speed" class="meters__text meters__text-number">1</span>
+                </p>
+            </div>
+            <div class="console-wrapper flex-center-between">
+                <p class="console__text">пульт управления марсоходом:</p>
+                <div class="flex-center-center">
+                    <button id="btnAcceleration" class="console__button console__button-acceleration">A</button>
+                    <button id="btnReverse" class="console__button console__button-reverse">R</button>
+                </div>
+            </div>
+        </div>
+        <div class="flex-center-center surface-wrapper">
+            <div >
+                <ul class="flex-center-center">
+                    <li class="surface__item">
+                        <spun class="surface__text">-7</spun>
+                    </li>
+                    <li class="surface__item">
+                        <spun class="surface__text">-6</spun>
+                    </li>
+                    <li class="surface__item">
+                        <spun class="surface__text">-5</spun>
+                    </li>
+                    <li class="surface__item">
+                        <spun class="surface__text">-4</spun>
+                    </li>
+                    <li class="surface__item">
+                        <spun class="surface__text">-3</spun>
+                    </li>
+                    <li class="surface__item">
+                        <spun class="surface__text">-2</spun>
+                    </li>
+                    <li class="surface__item">
+                        <spun class="surface__text">-1</spun>
+                    </li>
+                    <li class="surface__item">
+                        <spun class="surface__text">0</spun>
+                        <img id="marsRover" src="img/marsrover.png" class="marsrover-wrapper marsrover_transition">
+                    </li>
+                    <li class="surface__item">
+                        <spun class="surface__text">1</spun>
+                    </li>
+                    <li class="surface__item">
+                        <spun class="surface__text">2</spun>
+                    </li>
+                    <li class="surface__item">
+                        <spun class="surface__text">3</spun>
+                    </li>
+                    <li class="surface__item">
+                        <spun class="surface__text">4</spun>
+                    </li>
+                    <li class="surface__item">
+                        <spun class="surface__text">5</spun>
+                    </li>
+                    <li class="surface__item">
+                        <spun class="surface__text">6</spun>
+                    </li>
+                    <li class="surface__item">
+                        <spun class="surface__text">7</spun>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.min.js"></script>
+</body>

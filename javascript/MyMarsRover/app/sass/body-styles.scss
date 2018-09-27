@@ -1,0 +1,10 @@
+@import "variables";
+
+//Styles for body
+.body{
+  overflow: hidden;
+  &_background{
+    background: url(../img/mars.jpg) no-repeat center center fixed;
+    background-size: cover;
+  }
+}

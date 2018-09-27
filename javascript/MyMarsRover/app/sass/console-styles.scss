@@ -1,0 +1,47 @@
+@import "variables";
+
+//Styles for console
+.console{
+  &-wrapper{
+    width: 250px;
+    height: 130px;
+    position: relative;
+    border-radius: 5px;
+    margin-left: 200px;
+    background-image: url(../img/metal.jpg);
+    border: 2px solid black;
+  }
+  &__text{
+    text-align: center;
+    color: $console_color_text;
+    font-family: 'Capture it', arial;
+    padding: 5px;
+    font-size: 15px;
+    margin: 10px;
+  }
+  &__button{
+    width: 60px;
+    height: 40px;
+    color: $console_color_text;
+    font-family: 'Capture it', arial;
+    font-size: 18px;
+    border-radius: 5px;
+    margin: 15px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 11px 2px  rgba(0, 0, 0, 0.3);
+    &:hover{
+      box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255,255,255,.2);
+    }
+    &:active{
+      box-shadow: inset 0 0 15px 2px  rgba(0, 0, 0, 0.5);
+    }
+    &-acceleration{
+      background: $console_color_button-acceleration;
+    }
+    &-reverse{
+      background: $console_color_button-reverse;
+    }
+  }
+}

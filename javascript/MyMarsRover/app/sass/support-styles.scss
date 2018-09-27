@@ -1,0 +1,51 @@
+.flex{
+  &-center-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-between-center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-between-start{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &-around-center{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &-start-center{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &-center-start{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  &-center-around{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &-center-between{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+//Styles for main block
+.box-general{
+  margin-top: 15%;
+  height: 400px;
+}
+
+

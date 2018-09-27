@@ -1,0 +1,28 @@
+@import "variables";
+
+//Styles for surface
+.surface{
+  &-wrapper{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  &__item{
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    background: inherit;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid black;
+    position: relative;
+  }
+  &__text{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: $surface_color_text;
+    font-family: 'Open Sans Extrabold', arial;
+    font-size: 18px;
+  }
+}

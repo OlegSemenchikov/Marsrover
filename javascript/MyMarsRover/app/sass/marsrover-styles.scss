@@ -1,0 +1,19 @@
+@import "variables";
+
+//Styles for marsrover
+.marsrover{
+  &-wrapper{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    z-index: 2;
+  }
+  &_scale{
+    transform: scale(-1, 1);
+  }
+  &_transition{
+    transition: left 1s, transform 0.2s;
+  }
+}
