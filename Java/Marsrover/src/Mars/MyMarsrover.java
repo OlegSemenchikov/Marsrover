@@ -20,7 +20,7 @@ public class MyMarsrover {
 		int speed3 = 1;
 		int numTeams3 = 0;
 		String instruction3 = "";
-		
+			
 		int number = 0;
 		String instruction = "Марсоход остался стоять на месте.";
 		
@@ -56,30 +56,29 @@ public class MyMarsrover {
 						instruction1 += "A";
 						numTeams1++;
 					}
-				
-										
-					if(number%2 != 0){
-						//Second method
-						while (true) {
 		
-							if (position2 == number) {
-								break;
-							} else if (((number-position2) < speed2) & (speed2 > 0)) {
-								speed2 = -1;
-								instruction2 += "R";
-								numTeams2++;
-							} else if (((number-position2) > speed2) & (speed2 < 0)) {
-								speed2 = 1;
-								instruction2 += "R";
-								numTeams2++;					
-							} 
-							position2 += speed2;
-							speed2 *= 2;
-							instruction2 += "A";
+					//Second method
+					while (true) {
+						if (position2 == number) {
+							break;
+						} else if (((number-position2+1) < speed2) & (speed2 > 0)) {
+							speed2 = -1;
+							instruction2 += "R";
 							numTeams2++;
-						}
+							
+						} else if (((number-position2-1) > speed2) & (speed2 < 0)) {
+							speed2 = 1;
+							instruction2 += "R";
+							numTeams2++;
+							
+						} 
+						position2 += speed2;
+						speed2 *= 2;
+						instruction2 += "A";
+						numTeams2++;
+				
 					}
-					
+										
 					//Third method
 					while (true) {
 						if (position3 == number) {
@@ -103,45 +102,29 @@ public class MyMarsrover {
 						numTeams3++;
 					}
 					
-					if(numTeams2 == 0){
-						
-							if(numTeams1 < numTeams3){
-								System.out.println("Позиция марсохода = " + position1);
-								System.out.println("Скорость марсохода = " + speed1);
-								System.out.println("Минимальное количество команд в инструкции  = " + numTeams1);
-								System.out.println("Наиболее оптимальная инструкция: " + instruction1);
-							} else{								
-								System.out.println("Позиция марсохода = " + position3);
-								System.out.println("Скорость марсохода = " + speed3);
-								System.out.println("Минимальное количество команд в инструкции  = " + numTeams3);
-								System.out.println("Наиболее оптимальная инструкция: " + instruction3);
-							}
-						
-					} else{
-						
-							if(numTeams1 < numTeams3 && numTeams1 < numTeams2){								
-								System.out.println("Позиция марсохода = " + position1);
-								System.out.println("Скорость марсохода = " + speed1);
-								System.out.println("Минимальное количество команд в инструкции  = " + numTeams1);
-								System.out.println("Наиболее оптимальная инструкция: " + instruction1);
-							} else if(numTeams2 < numTeams3 && numTeams2 < numTeams1){
-								System.out.println("Позиция марсохода = " + position2);
-								System.out.println("Скорость марсохода = " + speed2);
-								System.out.println("Минимальное количество команд в инструкции  = " + numTeams2);
-								System.out.println("Наиболее оптимальная инструкция: " + instruction2);
-							} else{							
-								System.out.println("Позиция марсохода = " + position3);
-								System.out.println("Скорость марсохода = " + speed3);
-								System.out.println("Минимальное количество команд в инструкции  = " + numTeams3);
-								System.out.println("Наиболее оптимальная инструкция: " + instruction3);
-							}								
-					}
-
+					
+					if(numTeams1 <= numTeams2 && numTeams1 <= numTeams3){							
+						System.out.println("Позиция марсохода = " + position1);
+						System.out.println("Скорость марсохода = " + speed1);
+						System.out.println("Минимальное количество команд в инструкции  = " + numTeams1);
+						System.out.println("Наиболее оптимальная инструкция: " + instruction1);
+					} else if(numTeams2 <= numTeams3 && numTeams2 <= numTeams1){						
+						System.out.println("Позиция марсохода = " + position2);
+						System.out.println("Скорость марсохода = " + speed2);
+						System.out.println("Минимальное количество команд в инструкции  = " + numTeams2);
+						System.out.println("Наиболее оптимальная инструкция: " + instruction2);
+					} else{		
+						System.out.println("Позиция марсохода = " + position3);
+						System.out.println("Скорость марсохода = " + speed3);
+						System.out.println("Минимальное количество команд в инструкции  = " + numTeams3);
+						System.out.println("Наиболее оптимальная инструкция: " + instruction3);
+					}	
+				
 	} else{
 		System.out.println("Позиция марсохода = " + position1);
 		System.out.println("Скорость марсохода = " + speed1);
 		System.out.println("Минимальное количество команд в инструкции  = " + numTeams1);
-		System.out.println("Наиболее оптимальная инструкция: " + instruction);
+		System.out.println(instruction);
 	}
 		scan.close();
   }
