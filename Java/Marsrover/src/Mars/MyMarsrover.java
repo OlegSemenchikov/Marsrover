@@ -10,6 +10,7 @@ public class MyMarsrover {
 		int speed1 = 1;
 		int numTeams1 = 0;
 		String instruction1 = "";
+		int numTeamsMin = 0;
 		
 		int position2 = 0;
 		int speed2 = 1;
@@ -20,6 +21,11 @@ public class MyMarsrover {
 		int speed3 = 1;
 		int numTeams3 = 0;
 		String instruction3 = "";
+		
+		int position4 = 0;
+		int speed4 = 1;
+		int numTeams4 = 0;
+		String instruction4 = "";
 			
 		int number = 0;
 		String instruction = "Марсоход остался стоять на месте.";
@@ -102,23 +108,103 @@ public class MyMarsrover {
 						numTeams3++;
 					}
 					
+					if(numTeams1 <= numTeams2 && numTeams1 <= numTeams3){
+						numTeamsMin = numTeams1;
+					} else if(numTeams2 <= numTeams3 && numTeams2 <= numTeams1){
+						numTeamsMin = numTeams2;
+					} else{	
+						numTeamsMin = numTeams3;
+					}
 					
-					if(numTeams1 <= numTeams2 && numTeams1 <= numTeams3){							
+					//Fourth method
+					int i=0;
+				
+					while (i < 1000) {
+						
+						if (position4 == number) {
+							break;
+						} 
+//						
+						position4 = 0;
+						speed4 = 1;
+						numTeams4 = 0;
+						instruction4 = "";
+						i++;
+						do{
+							if (position4 == number) {
+								break;
+							} else if((position4 == 0)&(number > 0)){
+								instruction4 += "A";
+								numTeams4++;
+								position4 += speed4;
+								speed4 *= 2;							
+							} else if((position4 == 0)&(number < 0)){
+								instruction4 += "RA";
+								numTeams4++;
+								position4--;
+								speed4 = -2;														
+							} else if (position4 > number & (speed4 > 0)) {
+								instruction4 += "R";
+								numTeams4++;							
+								speed4 = -1;								
+							} else if (position4 < number & (speed4 < 0)) {
+								instruction4 += "R";
+								numTeams4++;							
+								speed4 = 1;								 
+							} else if ((Math.round(Math.random()) == 0)) {
+								instruction4 += "RA";
+								numTeams4+=2;							
+								if(speed4 > 0){
+									speed4 = -2;
+									position4--;
+								} else {
+									speed4 = 2;
+									position4++;	
+								}	
+								
+							} else {
+								instruction4 += "A";
+								numTeams4++;
+								position4 += speed4;
+								speed4 *= 2;								
+							}
+						
+						} while (numTeams4 +1 < numTeamsMin);
+						
+					}
+						if(i >= 1000){
+							numTeams4 += 2;
+						}
+					
+					if(numTeams1 <= numTeams2 && numTeams1 <= numTeams3 && numTeams1 <= numTeams4){
+						System.out.println("Первый метод");
 						System.out.println("Позиция марсохода = " + position1);
 						System.out.println("Скорость марсохода = " + speed1);
 						System.out.println("Минимальное количество команд в инструкции  = " + numTeams1);
 						System.out.println("Наиболее оптимальная инструкция: " + instruction1);
-					} else if(numTeams2 <= numTeams3 && numTeams2 <= numTeams1){						
+						System.out.println("********************************************************");
+					} else if(numTeams2 <= numTeams1 && numTeams2 <= numTeams3 && numTeams2 <= numTeams4){
+						System.out.println("Второй метод");
 						System.out.println("Позиция марсохода = " + position2);
 						System.out.println("Скорость марсохода = " + speed2);
 						System.out.println("Минимальное количество команд в инструкции  = " + numTeams2);
 						System.out.println("Наиболее оптимальная инструкция: " + instruction2);
-					} else{		
+						System.out.println("********************************************************");
+					} else if(numTeams3 <= numTeams1 && numTeams3 <= numTeams2 && numTeams3 <= numTeams4){
+						System.out.println("Третий метод");
 						System.out.println("Позиция марсохода = " + position3);
 						System.out.println("Скорость марсохода = " + speed3);
 						System.out.println("Минимальное количество команд в инструкции  = " + numTeams3);
 						System.out.println("Наиболее оптимальная инструкция: " + instruction3);
-					}	
+						System.out.println("********************************************************");												
+					} else{	
+						System.out.println("Четвертый метод");
+						System.out.println("Позиция марсохода = " + position4);
+						System.out.println("Скорость марсохода = " + speed4);
+						System.out.println("Минимальное количество команд в инструкции  = " + numTeams4);
+						System.out.println("Наиболее оптимальная инструкция: " + instruction4);
+						System.out.println("********************************************************");
+					}
 				
 	} else{
 		System.out.println("Позиция марсохода = " + position1);
